@@ -14,7 +14,6 @@ phases:
     - IMAGE_TAG=1.0
     - echo Logging in to Amazon ECR...
     - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 514211081162.dkr.ecr.us-east-1.amazonaws.com
-    - docker login --username kiant4b --password vervE324
   build:
     commands:
     - echo Build started on `date`

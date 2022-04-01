@@ -3,9 +3,7 @@ version: 0.2
 phases:
   install: 
     runtime-versions:
-      php: 7.3
-    commands:
-    - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&
+      php: 7.4
   pre_build: # commands to be run before build
     commands:
     - echo Logging in to Amazon ECR....

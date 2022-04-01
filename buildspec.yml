@@ -12,6 +12,8 @@ phases:
     - eval $(aws ecr get-login --region us-east-1 --no-include-email | sed 's|https://||')
     - REPOSITORY_URI=514211081162.dkr.ecr.us-east-1.amazonaws.com/gbxnga/laravel-docker-aws
     - IMAGE_TAG=1.0
+    - echo Logging in to Amazon ECR...
+    - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 514211081162.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
     - echo Build started on `date`

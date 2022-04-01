@@ -21,7 +21,6 @@ phases:
     - cp .env.example .env
     - echo generating app key
     - php artisan key:generate
-    - service docker start
     - systemctl enable docker
     - usermod -aG docker ec2-user
     - echo Building the Docker image...

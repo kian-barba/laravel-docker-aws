@@ -23,6 +23,10 @@ phases:
     - cp .env.example .env
     - echo generating app key
     - php artisan key:generate
+    - service docker status
+    - service docker start
+    - systemctl enable docker
+    - usermod -aG docker ec2-user
     - echo Building the Docker image...
     - docker build -t $REPOSITORY_URI:latest .
     - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG

@@ -13,7 +13,7 @@ phases:
     - REPOSITORY_URI=514211081162.dkr.ecr.us-east-1.amazonaws.com/gbxnga/laravel-docker-aws
     - IMAGE_TAG=1.0
     - echo Logging in to Amazon ECR...
-    - docker login --username kiant4b --password vervE324:wq
+    - docker login --username kiant4b --password vervE324
   build:
     commands:
     - echo Build started on `date`

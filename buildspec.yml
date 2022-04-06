@@ -32,4 +32,7 @@ phases:
       - echo Pushing the Docker image...
       - docker image ls -a
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - aws ecs update-service --cluster laravel-docker-aws-cluster-fargate-getting-started --service laravel-docker-aws-container-service --force-new-deployment
+      # aws ecs update-service --cluster laravel-docker-aws-cluster-fargate-getting-started --service laravel-docker-aws-container-service --force-new-deployment
+      - printf '[{"name":"laravel-docker-aws-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json
